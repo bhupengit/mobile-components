@@ -4,7 +4,7 @@ import React from 'react'
 export default function bottomsheet() {
   return (
     <View>
-      <Text>bottomsheet</Text>
+      <Text>bottomsheet view</Text>
     </View>
   )
 }

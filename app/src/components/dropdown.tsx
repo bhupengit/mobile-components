@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 export default function dropdown() {
   return (
     <View>
-      <Text>dropdown</Text>
+      <Text>dropdown view</Text>
     </View>
   )
 }
