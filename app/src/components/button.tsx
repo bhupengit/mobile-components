@@ -4,7 +4,7 @@ import React from 'react'
 export default function button() {
   return (
     <View>
-      <Text>button menu button</Text>
+      <Text>button ui</Text>
     </View>
   )
 }
