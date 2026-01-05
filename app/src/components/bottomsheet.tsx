@@ -1,10 +1,10 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { Text, View } from 'react-native'
 
 export default function bottomsheet() {
   return (
     <View>
-      <Text>bottomsheet view</Text>
+      <Text>bottomsheet</Text>
     </View>
   )
 }
