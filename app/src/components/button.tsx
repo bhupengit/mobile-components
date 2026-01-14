@@ -114,3 +114,20 @@ const variantStyles: Record<ButtonVariant, ViewStyle> = {
     backgroundColor: "transparent",
   },
 };
+
+const sizeStyles: Record<ButtonSize, ViewStyle> = {
+  sm: { paddingVertical: 8, paddingHorizontal: 14 },
+  md: { paddingVertical: 12, paddingHorizontal: 18 },
+  lg: { paddingVertical: 16, paddingHorizontal: 22 },
+};
+
+const textBaseStyle: TextStyle = {
+  fontWeight: "600",
+};
+
+const textVariantStyles: Record<ButtonVariant, TextStyle> = {
+  primary: { color: "#FFFFFF" },
+  secondary: { color: "#FFFFFF" },
+  outline: { color: "#2563EB" },
+  ghost: { color: "#2563EB" },
+};
