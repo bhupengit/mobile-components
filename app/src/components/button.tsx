@@ -56,7 +56,24 @@ export default function button({
         style,
       ]}
     >
-      <Text>Button ui</Text>
+      {loading ? (
+        <ActivityIndicator color={getLoaderColor(variant)} />
+      ) : (
+        <>
+          {leftIcon && <>{leftIcon}</>}
+          <Text
+            style={[
+              textBaseStyle,
+              textVariantStyles[variant],
+              textSizeStyles[size],
+              textStyle,
+            ]}
+          >
+            {title}
+          </Text>
+          {rightIcon && <>{rightIcon}</>}
+        </>
+      )}
     </Pressable>
   )
 }
