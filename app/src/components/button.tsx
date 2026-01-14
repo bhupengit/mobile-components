@@ -96,3 +96,21 @@ const pressedStyle: ViewStyle = {
 const disabledStyle: ViewStyle = {
   opacity: 0.5,
 };
+
+
+const variantStyles: Record<ButtonVariant, ViewStyle> = {
+  primary: {
+    backgroundColor: "#2563EB",
+  },
+  secondary: {
+    backgroundColor: "#111827",
+  },
+  outline: {
+    borderWidth: 1,
+    borderColor: "#2563EB",
+    backgroundColor: "transparent",
+  },
+  ghost: {
+    backgroundColor: "transparent",
+  },
+};
