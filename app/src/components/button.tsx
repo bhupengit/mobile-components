@@ -77,3 +77,13 @@ export default function button({
     </Pressable>
   )
 }
+
+/* ---------------- styles ---------------- */
+
+const baseStyle: ViewStyle = {
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: 8,
+  borderRadius: 12,
+};
