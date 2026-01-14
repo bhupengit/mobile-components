@@ -39,10 +39,24 @@ export default function button({
 }: ButtonProps) {
 
   const isDisabled = disabled || loading;
-  
+
   return (
-    <View>
+    <Pressable
+      onPress={onPress}
+      disabled={isDisabled}
+      accessibilityRole="button"
+      accessibilityState={{ disabled: isDisabled }}
+      style={({ pressed }) => [
+        baseStyle,
+        variantStyles[variant],
+        sizeStyles[size],
+        fullWidth && { width: "100%" },
+        isDisabled && disabledStyle,
+        pressed && !isDisabled && pressedStyle,
+        style,
+      ]}
+    >
       <Text>Button ui</Text>
-    </View>
+    </Pressable>
   )
 }
