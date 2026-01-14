@@ -131,3 +131,12 @@ const textVariantStyles: Record<ButtonVariant, TextStyle> = {
   outline: { color: "#2563EB" },
   ghost: { color: "#2563EB" },
 };
+
+const textSizeStyles: Record<ButtonSize, TextStyle> = {
+  sm: { fontSize: 14 },
+  md: { fontSize: 16 },
+  lg: { fontSize: 18 },
+};
+
+const getLoaderColor = (variant: ButtonVariant) =>
+  variant === "primary" || variant === "secondary" ? "#FFFFFF" : "#2563EB";
