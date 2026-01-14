@@ -24,7 +24,22 @@ interface ButtonProps {
   textStyle?: TextStyle;
 }
 
-export default function button() {
+export default function button({
+  title,
+  onPress,
+  variant = "primary",
+  size = "md",
+  loading = false,
+  disabled = false,
+  fullWidth = false,
+  leftIcon,
+  rightIcon,
+  style,
+  textStyle,
+}: ButtonProps) {
+
+  const isDisabled = disabled || loading;
+  
   return (
     <View>
       <Text>Button ui</Text>
