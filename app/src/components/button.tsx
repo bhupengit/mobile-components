@@ -87,3 +87,12 @@ const baseStyle: ViewStyle = {
   gap: 8,
   borderRadius: 12,
 };
+
+const pressedStyle: ViewStyle = {
+  transform: [{ scale: 0.97 }],
+  opacity: 0.9,
+};
+
+const disabledStyle: ViewStyle = {
+  opacity: 0.5,
+};
