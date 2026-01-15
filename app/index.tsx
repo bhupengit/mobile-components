@@ -1,5 +1,4 @@
 import { Text, View } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
 import Button from "./src/components/button";
 
 export default function Index() {
@@ -23,8 +22,10 @@ export default function Index() {
 
       <Button
         title="Login"
-        leftIcon={<Icon name="log-in" size={18} color="#fff" />}
-        rightIcon={<Icon name="arrow-right" size={18} color="#fff" />}
+        variant="secondary"
+        size="lg"
+        loading={false}
+        fullWidth
       />
     </View>
   );
