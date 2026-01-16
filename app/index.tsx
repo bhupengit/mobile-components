@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import { Text, View } from "react-native";
 import Button from "./src/components/button";
 
@@ -10,23 +11,58 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text style={{ fontSize: 20, fontWeight: "bold" }}>Building Button Component</Text>
 
       <Button
-        title="Continue"
+        title="Click me!"
         variant="primary"
         size="lg"
         loading={false}
-        fullWidth
+        style={{ marginTop: 20 }}
       />
 
       <Button
-        title="Login"
-        variant="secondary"
+        title="Click me!"
+        variant="primary"
         size="lg"
         loading={false}
-        fullWidth
+        leftIcon={<Ionicons name="arrow-back" size={20} color="#fff" />}
+        style={{ marginTop: 20, backgroundColor: "#3B82F6", borderColor: "#E5E7EB" }}
       />
+
+      <Button
+        title="Click me!"
+        variant="primary"
+        size="lg"
+        loading={false}
+        rightIcon={<Ionicons name="arrow-forward" size={20} color="#fff" />}
+        style={{ marginTop: 20, backgroundColor: "#3B82F6", borderColor: "#E5E7EB" }}
+      />
+
+      <Button
+        title="Click me!"
+        variant="secondary"
+        size="md"
+        loading={false}
+        style={{ marginTop: 10 }}
+      />
+
+      <Button
+        title="Click me!"
+        variant="outline"
+        size="sm"
+        loading={false}
+        style={{ marginTop: 10 }}
+      />
+
+      <Button
+        title="Click me!"
+        variant="ghost"
+        size="sm"
+        loading={false}
+        style={{ marginTop: 10 }}
+      />
+
     </View>
   );
 }
