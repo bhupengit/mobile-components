@@ -1,5 +1,19 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  Pressable,
+  FlatList,
+  Modal,
+  StyleSheet,
+  ViewStyle,
+  TextStyle,
+} from "react-native";
+
+export interface DropdownItem {
+  label: string;
+  value: string;
+}
 
 export default function dropdown() {
   return (
