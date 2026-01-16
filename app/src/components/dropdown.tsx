@@ -60,10 +60,64 @@ export default function Dropdown({
 
   const selectedItem = data.find((i) => i.value === value);
 
-  
+
   return (
-    <View>
-      <Text>Dropdown List</Text>
-    </View>
+    <>
+      {/* Trigger */}
+      <Pressable
+        disabled={disabled}
+        onPress={() => setVisible(true)}
+        style={[
+          styles.trigger,
+          {
+            height,
+            width,
+            borderWidth: showBorder ? 1 : 0,
+            borderColor,
+          },
+          disabled && styles.disabled,
+          containerStyle,
+        ]}
+      >
+        <Text
+          style={[
+            styles.text,
+            !selectedItem && styles.placeholder,
+            textStyle,
+          ]}
+        >
+          {selectedItem?.label ?? placeholder}
+        </Text>
+
+        <View style={{ marginLeft: 8 }}>
+          {icon ?? (
+            <Text style={{ color: iconColor, fontSize: 16 }}>⌄</Text>
+          )}
+        </View>
+      </Pressable>
+
+      {/* Dropdown list */}
+      <Modal transparent visible={visible} animationType="fade">
+        <Pressable style={styles.overlay} onPress={() => setVisible(false)}>
+          <View style={[styles.listContainer, { width }]}>
+            <FlatList
+              data={data}
+              keyExtractor={(item) => item.value}
+              renderItem={({ item }) => (
+                <Pressable
+                  style={styles.item}
+                  onPress={() => {
+                    onChange(item);
+                    setVisible(false);
+                  }}
+                >
+                  <Text style={styles.itemText}>{item.label}</Text>
+                </Pressable>
+              )}
+            />
+          </View>
+        </Pressable>
+      </Modal>
+    </>
   )
 }
