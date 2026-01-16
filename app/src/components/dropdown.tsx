@@ -36,7 +36,25 @@ interface DropdownProps {
   textStyle?: TextStyle;
 }
 
-export default function dropdown() {
+export default function Dropdown({
+  data,
+  value,
+  placeholder = "Select option",
+  onChange,
+
+  showBorder = true,
+  borderColor = "#D1D5DB",
+  icon,
+  iconColor = "#6B7280",
+
+  height = 48,
+  width = "100%",
+
+  disabled = false,
+
+  containerStyle,
+  textStyle,
+}: DropdownProps) {
   return (
     <View>
       <Text>Dropdown List</Text>
