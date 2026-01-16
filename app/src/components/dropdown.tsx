@@ -15,6 +15,27 @@ export interface DropdownItem {
   value: string;
 }
 
+interface DropdownProps {
+  data: DropdownItem[];
+  value?: string;
+  placeholder?: string;
+  onChange: (item: DropdownItem) => void;
+
+  /** UI customization */
+  showBorder?: boolean;
+  borderColor?: string;
+  icon?: React.ReactNode;
+  iconColor?: string;
+
+  height?: number;
+  width?: number | string;
+
+  disabled?: boolean;
+
+  containerStyle?: ViewStyle;
+  textStyle?: TextStyle;
+}
+
 export default function dropdown() {
   return (
     <View>
