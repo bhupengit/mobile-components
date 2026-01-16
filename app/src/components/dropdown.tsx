@@ -55,6 +55,12 @@ export default function Dropdown({
   containerStyle,
   textStyle,
 }: DropdownProps) {
+
+  const [visible, setVisible] = useState(false);
+
+  const selectedItem = data.find((i) => i.value === value);
+
+  
   return (
     <View>
       <Text>Dropdown List</Text>
