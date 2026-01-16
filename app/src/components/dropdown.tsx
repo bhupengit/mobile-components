@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import {
-  View,
-  Text,
-  Pressable,
   FlatList,
   Modal,
+  Pressable,
   StyleSheet,
-  ViewStyle,
+  Text,
   TextStyle,
+  View,
+  ViewStyle,
 } from "react-native";
 
 export interface DropdownItem {
@@ -69,12 +69,7 @@ export default function Dropdown({
         onPress={() => setVisible(true)}
         style={[
           styles.trigger,
-          {
-            height,
-            width,
-            borderWidth: showBorder ? 1 : 0,
-            borderColor,
-          },
+          { height: height as number, width: width as number, borderWidth: showBorder ? 1 : 0, borderColor },
           disabled && styles.disabled,
           containerStyle,
         ]}
@@ -99,7 +94,7 @@ export default function Dropdown({
       {/* Dropdown list */}
       <Modal transparent visible={visible} animationType="fade">
         <Pressable style={styles.overlay} onPress={() => setVisible(false)}>
-          <View style={[styles.listContainer, { width }]}>
+          <View style={[styles.listContainer, { width: width as number }]}>
             <FlatList
               data={data}
               keyExtractor={(item) => item.value}
@@ -121,3 +116,48 @@ export default function Dropdown({
     </>
   )
 }
+
+
+
+/* ---------------- styles ---------------- */
+
+const styles = StyleSheet.create({
+  trigger: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 12,
+    borderRadius: 10,
+    backgroundColor: "#FFFFFF",
+  },
+  text: {
+    fontSize: 16,
+    color: "#111827",
+  },
+  placeholder: {
+    color: "#9CA3AF",
+  },
+  disabled: {
+    opacity: 0.5,
+  },
+  overlay: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.2)",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  listContainer: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    maxHeight: 250,
+    paddingVertical: 8,
+  },
+  item: {
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+  },
+  itemText: {
+    fontSize: 16,
+    color: "#111827",
+  },
+});
