@@ -11,3 +11,11 @@ import {
 } from "react-native";
 
 export type ToggleValue = string | number;
+
+export interface ToggleItem<T extends ToggleValue = string> {
+  label: string;
+  value: T;
+  icon?: React.ReactNode;
+}
+
+export type ToggleVariant = "pill" | "outline" | "solid";
