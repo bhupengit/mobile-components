@@ -41,6 +41,15 @@ export default function Index() {
 
       <Button
         title="Click me!"
+        variant="primary"
+        size="lg"
+        loading={false}
+        rightIcon={<Ionicons name="arrow-forward" size={20} color="#fff" />}
+        style={{ marginTop: 20, backgroundColor: "#3B82F6", borderColor: "#E5E7EB" }}
+      />
+
+      <Button
+        title="Click me!"
         variant="secondary"
         size="md"
         loading={false}
