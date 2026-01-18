@@ -63,7 +63,7 @@ export default function Dropdown({
 
   return (
     <>
-      {/* Trigger */}
+
       <Pressable
         disabled={disabled}
         onPress={() => setVisible(true)}
