@@ -133,3 +133,31 @@ export function ToggleGroup<T extends ToggleValue>({
     </View>
   );
 }
+
+/* ---------------- styles ---------------- */
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    borderRadius: 999,
+    overflow: "hidden",
+  },
+  indicator: {
+    position: "absolute",
+    top: 2,
+    bottom: 2,
+    left: 2,
+    borderRadius: 999,
+  },
+  item: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+  },
+  text: {
+    fontSize: 14,
+    fontWeight: "600",
+  },
+});
