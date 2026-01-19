@@ -135,9 +135,6 @@ export function ToggleGroup<T extends ToggleValue>({
     </View>
   );
 }
-
-/* ---------------- styles ---------------- */
-
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
