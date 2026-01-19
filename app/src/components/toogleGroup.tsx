@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import {
   Animated,
+  DimensionValue,
   LayoutChangeEvent,
   Pressable,
+  StyleSheet,
   Text,
   TextStyle,
   View,
-  ViewStyle
+  ViewStyle,
 } from "react-native";
 
 export type ToggleValue = string | number;
@@ -26,7 +28,7 @@ export interface ToggleGroupProps<T extends ToggleValue = string> {
 
   variant?: ToggleVariant;
   height?: number;
-  width?: number | string;
+  width?: DimensionValue;
 
   activeColor?: string;
   inactiveColor?: string;
