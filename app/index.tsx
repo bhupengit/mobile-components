@@ -1,8 +1,13 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
 import { Text, View } from "react-native";
 import Button from "./src/components/button";
+import { ToggleGroup } from "./src/components/toogleGroup";
 
 export default function Index() {
+
+  const [mode, setMode] = useState<"day" | "week" | "month">("day");
+
   return (
     <View
       style={{
@@ -70,6 +75,18 @@ export default function Index() {
         size="sm"
         loading={false}
         style={{ marginTop: 10 }}
+      />
+
+
+
+      <ToggleGroup
+        items={[
+          { label: "Day", value: "day" },
+          { label: "Week", value: "week" },
+          { label: "Month", value: "month" },
+        ]}
+        value={mode}
+        onChange={setMode}
       />
 
     </View>
