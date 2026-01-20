@@ -76,7 +76,7 @@ export default function Index() {
           loading={false}
           textStyle={{ color: "#2563EB" }}
           leftIcon={<Ionicons name="download-outline" size={20} color="#2563EB" />}
-          style={{ marginTop: 10, backgroundColor:"#EFF6FF", borderColor:"#BFDBFE"}}
+          style={{ marginTop: 10, backgroundColor: "#EFF6FF", borderColor: "#BFDBFE" }}
         />
         <Button
           title="Upload"
@@ -85,11 +85,53 @@ export default function Index() {
           loading={false}
           textStyle={{ color: "#2563EB" }}
           leftIcon={<Ionicons name="cloud-upload-outline" size={20} color="#2563EB" />}
-          style={{ marginTop: 10, backgroundColor:"#EFF6FF", borderColor:"#BFDBFE"}}
+          style={{ marginTop: 10, backgroundColor: "#EFF6FF", borderColor: "#BFDBFE" }}
         />
       </View>
 
+      <View style={{ flexDirection: "row", marginTop: 20, gap: 15 }}>
+      <Button
+          title=""
+          variant="ghost"
+          style={{
+            padding: 10,
+            paddingEnd: 5,
+            backgroundColor: "#F3F4F6",
+          }}
+          leftIcon={<Ionicons name="heart-outline" size={20} color="#374151" />}
+        />
+        <Button
+          title=""
+          variant="ghost"
+          style={{
+            padding: 10,
+            paddingEnd: 5,
+            backgroundColor: "#F3F4F6",
+          }}
+          leftIcon={<Ionicons name="save-outline" size={20} color="#374151" />}
+        />
+        <Button
+          title=""
+          variant="ghost"
+          style={{
+            padding: 10,
+            paddingEnd: 5,
+            backgroundColor: "#F3F4F6",
+          }}
+          leftIcon={<Ionicons name="share-outline" size={20} color="#374151" />}
+        />
 
+        <Button
+          title=""
+          variant="ghost"
+          style={{
+            padding: 10,
+            paddingEnd: 5,
+            backgroundColor: "#F3F4F6",
+          }}
+          leftIcon={<Ionicons name="refresh-outline" size={20} color="#374151" />}
+        />
+      </View>
 
       {/* <ToggleGroup
         items={[
