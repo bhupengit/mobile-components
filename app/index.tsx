@@ -90,7 +90,7 @@ export default function Index() {
       </View>
 
       <View style={{ flexDirection: "row", marginTop: 20, gap: 15 }}>
-      <Button
+        <Button
           title=""
           variant="ghost"
           style={{
@@ -132,6 +132,34 @@ export default function Index() {
           leftIcon={<Ionicons name="refresh-outline" size={20} color="#374151" />}
         />
       </View>
+
+      <View style={{ flexDirection: "row", gap: 15 }}>
+        <Button
+          title="Checkout"
+          variant="secondary"
+          textStyle={{ color: "#FFF" }}
+          rightIcon={<Ionicons name="bag-outline" size={18} color="#FFFFFF" />}
+          style={{
+            marginTop: 20, backgroundColor: "#2B6CB0", borderColor: "#1E5A99", borderWidth: 1, shadowColor: "#000000",
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.18,
+            shadowRadius: 3, elevation: 3,
+          }}
+        />
+        <Button
+          title="Open"
+          variant="secondary"
+          textStyle={{ color: "#FFF" }}
+          rightIcon={<Ionicons name="arrow-down" size={18} color="#FFFFFF" />}
+          style={{
+            marginTop: 20, backgroundColor: "#2B6CB0", borderColor: "#1E5A99", borderWidth: 1, shadowColor: "#000000",
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.18,
+            shadowRadius: 3, elevation: 3,
+          }}
+        />
+      </View>
+
 
       {/* <ToggleGroup
         items={[
