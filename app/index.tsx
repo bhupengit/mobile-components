@@ -2,7 +2,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 import { Text, View } from "react-native";
 import Button from "./src/components/button";
-import { ToggleGroup } from "./src/components/toogleGroup";
 
 export default function Index() {
 
@@ -69,33 +68,30 @@ export default function Index() {
         leftIcon={<Ionicons name="card-outline" size={20} color="#fff" />}
       />
 
-      <Button
-        title="Click me!"
-        variant="secondary"
-        size="md"
-        loading={false}
-        style={{ marginTop: 10 }}
-      />
-
-      <Button
-        title="Click me!"
-        variant="outline"
-        size="sm"
-        loading={false}
-        style={{ marginTop: 10 }}
-      />
-
-      <Button
-        title="Click me!"
-        variant="ghost"
-        size="sm"
-        loading={false}
-        style={{ marginTop: 10 }}
-      />
+      <View style={{ flexDirection: 'row', gap: 12 }}>
+        <Button
+          title="Download"
+          variant="outline"
+          size="lg"
+          loading={false}
+          textStyle={{ color: "#2563EB" }}
+          leftIcon={<Ionicons name="download-outline" size={20} color="#2563EB" />}
+          style={{ marginTop: 10, backgroundColor:"#EFF6FF", borderColor:"#BFDBFE"}}
+        />
+        <Button
+          title="Upload"
+          variant="outline"
+          size="lg"
+          loading={false}
+          textStyle={{ color: "#2563EB" }}
+          leftIcon={<Ionicons name="cloud-upload-outline" size={20} color="#2563EB" />}
+          style={{ marginTop: 10, backgroundColor:"#EFF6FF", borderColor:"#BFDBFE"}}
+        />
+      </View>
 
 
 
-      <ToggleGroup
+      {/* <ToggleGroup
         items={[
           { label: "Day", value: "day" },
           { label: "Week", value: "week" },
@@ -103,7 +99,7 @@ export default function Index() {
         ]}
         value={mode}
         onChange={setMode}
-      />
+      /> */}
 
     </View>
   );
