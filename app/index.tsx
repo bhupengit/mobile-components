@@ -21,7 +21,7 @@ export default function Index() {
 
       <Button
         title="Continue"
-        variant="primary"
+        variant="secondary"
         size="lg"
         loading={false}
         leftIcon={<Ionicons name="arrow-forward-circle" size={40} color={"#2F6FDB"} />}
@@ -30,12 +30,13 @@ export default function Index() {
       />
 
       <Button
-        title="Click me!"
+        title="Add to cart"
         variant="primary"
         size="lg"
         loading={false}
-        leftIcon={<Ionicons name="cart-outline" size={20} color="#fff" />}
-        style={{ marginTop: 20, backgroundColor: "#3B82F6", borderColor: "#E5E7EB" }}
+        leftIcon={<Ionicons name="cart-outline" size={20} color="#111827" />}
+        textStyle={{fontSize: 16, color:"#111827"}}
+        style={{ marginTop: 20, backgroundColor: "#FFFFFF", borderColor: "#D1D5DB", borderWidth: 1}}
       />
 
       <Button
