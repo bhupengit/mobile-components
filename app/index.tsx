@@ -16,7 +16,7 @@ export default function Index() {
         backgroundColor: "#fff"
       }}
     >
-      <Text style={{ fontSize: 20, fontWeight: "bold" }}>Building Button Component</Text>
+      <Text style={{ fontSize: 26, fontWeight: "bold" }}>Button Components</Text>
 
       <Button
         title="Continue"
@@ -160,6 +160,12 @@ export default function Index() {
         />
       </View>
 
+      <Button
+          title="Refresh"
+          variant="ghost"
+          style={{marginTop: 20}}
+          leftIcon={<Ionicons name="refresh" size={16} color="#374151" />}
+        />
 
       {/* <ToggleGroup
         items={[
