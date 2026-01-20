@@ -150,7 +150,7 @@ export default function Index() {
           title="Open"
           variant="secondary"
           textStyle={{ color: "#FFF" }}
-          rightIcon={<Ionicons name="arrow-down" size={18} color="#FFFFFF" />}
+          rightIcon={<Ionicons name="chevron-down" size={18} color="#FFFFFF" />}
           style={{
             marginTop: 20, backgroundColor: "#2B6CB0", borderColor: "#1E5A99", borderWidth: 1, shadowColor: "#000000",
             shadowOffset: { width: 0, height: 2 },
