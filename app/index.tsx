@@ -60,12 +60,13 @@ export default function Index() {
       />
 
       <Button
-        title="Click me!"
+        title="Pay now"
         variant="primary"
         size="lg"
         loading={false}
-        rightIcon={<Ionicons name="arrow-forward" size={20} color="#fff" />}
-        style={{ marginTop: 20, backgroundColor: "#3B82F6", borderColor: "#E5E7EB" }}
+        fullWidth
+        gradient={["#3F8F4E", "#4FA65F"]}
+        leftIcon={<Ionicons name="card-outline" size={20} color="#fff" />}
       />
 
       <Button

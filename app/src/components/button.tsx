@@ -1,10 +1,11 @@
+import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import {
-  Text,
-  Pressable,
   ActivityIndicator,
-  ViewStyle,
+  Pressable,
+  Text,
   TextStyle,
+  ViewStyle,
 } from "react-native";
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
@@ -22,6 +23,11 @@ interface ButtonProps {
   rightIcon?: React.ReactNode;
   style?: ViewStyle;
   textStyle?: TextStyle;
+  gradient?: readonly [string, string, ...string[]];
+  gradientDirection?: {
+    start: { x: number; y: number };
+    end: { x: number; y: number };
+  };
 }
 
 export default function Button({
@@ -34,11 +40,17 @@ export default function Button({
   fullWidth = false,
   leftIcon,
   rightIcon,
+  gradient,
+  gradientDirection = {
+    start: { x: 0, y: 0 },
+    end: { x: 0, y: 1 },
+  },
   style,
   textStyle,
 }: ButtonProps) {
 
   const isDisabled = disabled || loading;
+  const Wrapper = gradient ? LinearGradient : React.Fragment;
 
   return (
     <Pressable
@@ -48,7 +60,7 @@ export default function Button({
       accessibilityState={{ disabled: isDisabled }}
       style={({ pressed }) => [
         baseStyle,
-        variantStyles[variant],
+        !gradient && variantStyles[variant],
         sizeStyles[size],
         fullWidth && { width: "100%" },
         isDisabled && disabledStyle,
@@ -56,22 +68,52 @@ export default function Button({
         style,
       ]}
     >
-      {loading ? (
-        <ActivityIndicator color={getLoaderColor(variant)} />
+      {gradient ? (
+        <LinearGradient
+          colors={gradient}
+          start={gradientDirection.start}
+          end={gradientDirection.end}
+          style={styles.gradient}
+        >
+          {loading ? (
+            <ActivityIndicator color="#FFF" />
+          ) : (
+            <>
+              {leftIcon}
+              <Text
+                style={[
+                  textBaseStyle,
+                  styles.gradientText,
+                  textSizeStyles[size],
+                  textStyle,
+                ]}
+              >
+                {title}
+              </Text>
+              {rightIcon}
+            </>
+          )}
+        </LinearGradient>
       ) : (
         <>
-          {leftIcon && <>{leftIcon}</>}
-          <Text
-            style={[
-              textBaseStyle,
-              textVariantStyles[variant],
-              textSizeStyles[size],
-              textStyle,
-            ]}
-          >
-            {title}
-          </Text>
-          {rightIcon && <>{rightIcon}</>}
+          {loading ? (
+            <ActivityIndicator color={getLoaderColor(variant)} />
+          ) : (
+            <>
+              {leftIcon && <>{leftIcon}</>}
+              <Text
+                style={[
+                  textBaseStyle,
+                  textVariantStyles[variant],
+                  textSizeStyles[size],
+                  textStyle,
+                ]}
+              >
+                {title}
+              </Text>
+              {rightIcon && <>{rightIcon}</>}
+            </>
+          )}
         </>
       )}
     </Pressable>
@@ -140,3 +182,21 @@ const textSizeStyles: Record<ButtonSize, TextStyle> = {
 
 const getLoaderColor = (variant: ButtonVariant) =>
   variant === "primary" || variant === "secondary" ? "#FFFFFF" : "#2563EB";
+
+const styles = {
+  gradient: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    width: "100%",
+    height: "100%",
+    borderRadius: 12,
+    padding: 12
+  } as ViewStyle,
+
+  gradientText: {
+    color: "#FFFFFF",
+    fontWeight: "600",
+  } as TextStyle,
+};
