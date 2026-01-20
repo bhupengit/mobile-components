@@ -14,7 +14,7 @@ export default function Index() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor:"#fff"
+        backgroundColor: "#fff"
       }}
     >
       <Text style={{ fontSize: 20, fontWeight: "bold" }}>Building Button Component</Text>
@@ -25,8 +25,8 @@ export default function Index() {
         size="lg"
         loading={false}
         leftIcon={<Ionicons name="arrow-forward-circle" size={40} color={"#2F6FDB"} />}
-        textStyle={{color:"#111827"}}
-        style={{ marginTop: 20, borderRadius: 50, paddingVertical: 5, paddingStart: 10, paddingEnd: 20, backgroundColor: "#EDEDED", borderColor:"#E5E7EB", borderWidth: 1 }}
+        textStyle={{ color: "#111827" }}
+        style={{ marginTop: 20, borderRadius: 50, paddingVertical: 5, paddingStart: 10, paddingEnd: 20, backgroundColor: "#EDEDED", borderColor: "#E5E7EB", borderWidth: 1 }}
       />
 
       <Button
@@ -35,17 +35,28 @@ export default function Index() {
         size="lg"
         loading={false}
         leftIcon={<Ionicons name="cart-outline" size={20} color="#111827" />}
-        textStyle={{fontSize: 16, color:"#111827"}}
-        style={{ marginTop: 20, backgroundColor: "#FFFFFF", borderColor: "#D1D5DB", borderWidth: 1}}
+        textStyle={{ fontSize: 16, color: "#111827" }}
+        style={{ marginTop: 20, backgroundColor: "#FFFFFF", borderColor: "#D1D5DB", borderWidth: 1 }}
       />
 
       <Button
-        title="Click me!"
-        variant="primary"
+        title="View details"
+        variant="secondary"
         size="lg"
         loading={false}
-        rightIcon={<Ionicons name="arrow-forward" size={20} color="#fff" />}
-        style={{ marginTop: 20, backgroundColor: "#3B82F6", borderColor: "#E5E7EB" }}
+        rightIcon={
+          <View style={{
+            width: 32,
+            height: 32,
+            borderRadius: 16,
+            backgroundColor: "#FFFFFF",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
+            <Ionicons name="arrow-forward" size={18} color={"#111827"} />
+          </View>}
+        textStyle={{ color: "#FFFFFF" }}
+        style={{ marginTop: 20, borderRadius: 50, paddingVertical: 10, paddingStart: 20, paddingEnd: 10, backgroundColor: "#1F1F1F", borderColor: "#E5E7EB", borderWidth: 1 }}
       />
 
       <Button
