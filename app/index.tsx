@@ -166,7 +166,6 @@ export default function Index() {
           style={{marginTop: 20}}
           leftIcon={<Ionicons name="refresh" size={16} color="#374151" />}
         />
-
       {/* <ToggleGroup
         items={[
           { label: "Day", value: "day" },
