@@ -321,7 +321,6 @@ export default function Index() {
         width={80}
         activeColor="#22C55E"
         backgroundColor="#D1D5DB"
-
         containerStyle={{ marginTop: 20 }}
       />
     </View>
