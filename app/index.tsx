@@ -1,10 +1,21 @@
+import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 import { Text, View } from "react-native";
 import { ToggleGroup } from "./src/components/toogleGroup";
 
+type Status = "all" | "active" | "done";
+type Layout = "list" | "grid";
+type Type = "on" | "off";
+
 export default function Index() {
 
   const [mode, setMode] = useState<"day" | "week" | "month">("day");
+
+  // For Toggle Groups
+  const [status, setStatus] = useState<Status>("all");
+  const [layout, setLayout] = useState<Layout>("list");
+  const [layoutIcon, setLayoutIcon] = useState<Layout>("grid");
+  const [type, setType] = useState<Type>("on")
 
   return (
     <View
@@ -167,6 +178,20 @@ export default function Index() {
         /> */}
 
       <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Toggle Group</Text>
+
+      <ToggleGroup
+        variant="outline"
+        items={[
+          { label: "All", value: "all" },
+          { label: "Active", value: "active" },
+          { label: "Done", value: "done" },
+        ]}
+        value={status}
+        onChange={setStatus}
+        activeColor="#2563EB"
+        borderColor="#E5E7EB"
+      />
+
       <ToggleGroup
         items={[
           { label: "Day", value: "day" },
@@ -175,8 +200,94 @@ export default function Index() {
         ]}
         value={mode}
         onChange={setMode}
+        containerStyle={{ marginTop: 20 }}
       />
 
+
+
+      <ToggleGroup
+        variant="solid"
+        backgroundColor="#ADD8E6"
+        activeColor="#2563EB"
+        inactiveColor="#9CA3AF"
+        items={[
+          { label: "List", value: "list" },
+          { label: "Grid", value: "grid" },
+        ]}
+        value={layout}
+        onChange={setLayout}
+        containerStyle={{ marginTop: 20 }}
+      />
+
+
+      <ToggleGroup
+        items={[
+          {
+            label: "",
+            value: "list",
+            icon: <Ionicons name="list" size={18} />,
+          },
+          {
+            label: "",
+            value: "grid",
+            icon: <Ionicons name="grid" size={18} />,
+          },
+        ]}
+        value={layoutIcon}
+        onChange={setLayoutIcon}
+        containerStyle={{ marginTop: 20 }}
+      />
+
+
+      <ToggleGroup
+        height={32}
+        items={[
+          { label: "On", value: "on" },
+          { label: "Off", value: "off" },
+        ]}
+        value={type}
+        onChange={setType}
+        textStyle={{ fontSize: 12 }}
+        containerStyle={{ marginTop: 20 }}
+      />
+
+      {/* 
+      <ToggleGroup
+        activeColor="#10B981"       // green
+        backgroundColor="#ECFDF5"
+        inactiveColor="#065F46"
+        items={[
+          { label: "Monthly", value: "monthly" },
+          { label: "Yearly", value: "yearly" },
+        ]}
+        value={plan}
+        onChange={setPlan}
+      />
+
+
+      <ToggleGroup
+        activeColor="#DC2626"       // red
+        backgroundColor="#FEE2E2"
+        inactiveColor="#7F1D1D"
+        items={[
+          { label: "Disable", value: "off" },
+          { label: "Enable", value: "on" },
+        ]}
+        value={alert}
+        onChange={setAlert}
+      />
+
+      <ToggleGroup
+        width="100%"
+        height={52}
+        items={[
+          { label: "Overview", value: "overview" },
+          { label: "Details", value: "details" },
+          { label: "Activity", value: "activity" },
+        ]}
+        value={tab}
+        onChange={setTab}
+      /> */}
     </View>
   );
 }
