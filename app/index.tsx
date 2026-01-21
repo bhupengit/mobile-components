@@ -6,6 +6,9 @@ import { ToggleGroup } from "./src/components/toogleGroup";
 type Status = "all" | "active" | "done";
 type Layout = "list" | "grid";
 type Type = "on" | "off";
+type Plan = "monthly" | "yearly";
+type Mode = "light" | "dark"
+
 
 export default function Index() {
 
@@ -16,6 +19,10 @@ export default function Index() {
   const [layout, setLayout] = useState<Layout>("list");
   const [layoutIcon, setLayoutIcon] = useState<Layout>("grid");
   const [type, setType] = useState<Type>("on")
+  const [plan, setPlan] = useState<Plan>("monthly")
+  const [alert, setAlert] = useState<Type>("off")
+  const [modeSwitch, setModeSwitch] = useState<Mode>("light")
+  const [enabled, setEnabled] = useState<"off" | "on">("off");
 
   return (
     <View
@@ -177,7 +184,7 @@ export default function Index() {
           leftIcon={<Ionicons name="refresh" size={16} color="#374151" />}
         /> */}
 
-      <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Toggle Group</Text>
+      <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Toggle Groups</Text>
 
       <ToggleGroup
         variant="outline"
@@ -241,6 +248,7 @@ export default function Index() {
 
       <ToggleGroup
         height={32}
+        width={160}
         items={[
           { label: "On", value: "on" },
           { label: "Off", value: "off" },
@@ -251,8 +259,9 @@ export default function Index() {
         containerStyle={{ marginTop: 20 }}
       />
 
-      {/* 
+
       <ToggleGroup
+        width={300}
         activeColor="#10B981"       // green
         backgroundColor="#ECFDF5"
         inactiveColor="#065F46"
@@ -262,6 +271,7 @@ export default function Index() {
         ]}
         value={plan}
         onChange={setPlan}
+        containerStyle={{ marginTop: 20 }}
       />
 
 
@@ -275,19 +285,45 @@ export default function Index() {
         ]}
         value={alert}
         onChange={setAlert}
+        containerStyle={{ marginTop: 20 }}
       />
 
       <ToggleGroup
-        width="100%"
-        height={52}
         items={[
-          { label: "Overview", value: "overview" },
-          { label: "Details", value: "details" },
-          { label: "Activity", value: "activity" },
+          {
+            label: "",
+            value: "light",
+            icon: <Ionicons name="sunny" size={16} />,
+          },
+          {
+            label: "",
+            value: "dark",
+            icon: <Ionicons name="moon" size={16} />,
+          },
         ]}
-        value={tab}
-        onChange={setTab}
-      /> */}
+        value={modeSwitch}
+        onChange={setModeSwitch}
+        height={32}
+        width={100}
+        activeColor="#111827"
+        backgroundColor="#E5E7EB"
+        containerStyle={{ marginTop: 20 }}
+      />
+
+      <ToggleGroup
+        items={[
+          { label: "", value: "off" },
+          { label: "", value: "on" },
+        ]}
+        value={enabled}
+        onChange={setEnabled}
+        height={30}
+        width={80}
+        activeColor="#22C55E"
+        backgroundColor="#D1D5DB"
+
+        containerStyle={{ marginTop: 20 }}
+      />
     </View>
   );
 }
