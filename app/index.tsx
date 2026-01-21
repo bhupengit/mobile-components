@@ -1,7 +1,6 @@
-import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 import { Text, View } from "react-native";
-import Button from "./src/components/button";
+import { ToggleGroup } from "./src/components/toogleGroup";
 
 export default function Index() {
 
@@ -16,7 +15,7 @@ export default function Index() {
         backgroundColor: "#fff"
       }}
     >
-      <Text style={{ fontSize: 26, fontWeight: "bold" }}>Button Components</Text>
+      {/* <Text style={{ fontSize: 26, fontWeight: "bold" }}>Button Components</Text>
 
       <Button
         title="Continue"
@@ -165,8 +164,10 @@ export default function Index() {
           variant="ghost"
           style={{marginTop: 20}}
           leftIcon={<Ionicons name="refresh" size={16} color="#374151" />}
-        />
-      {/* <ToggleGroup
+        /> */}
+
+      <Text style={{ fontSize: 26, fontWeight: "bold" }}>Button Components</Text>
+      <ToggleGroup
         items={[
           { label: "Day", value: "day" },
           { label: "Week", value: "week" },
@@ -174,7 +175,7 @@ export default function Index() {
         ]}
         value={mode}
         onChange={setMode}
-      /> */}
+      />
 
     </View>
   );
