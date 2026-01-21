@@ -187,7 +187,7 @@ export default function Index() {
       <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Toggle Groups</Text>
 
       <ToggleGroup
-      width={"90%"}
+      width={"95%"}
         variant="pill"
         items={[
           { label: "All", value: "all" },
@@ -196,10 +196,11 @@ export default function Index() {
         ]}
         value={status}
         onChange={setStatus}
-        activeColor="#2563EB"
-        borderColor="#E5E7EB"
-        containerStyle={{borderRadius: 10}}
-        indicatorStyle={{borderRadius: 10}}
+        activeColor="#ffffff"
+        borderColor="#262626"
+        textStyle={{color: "#262626"}}
+        containerStyle={{borderRadius: 10, backgroundColor:"#f5f5f5"}}
+        indicatorStyle={{borderRadius: 6, margin: 4}}
       />
 
       <ToggleGroup
@@ -210,7 +211,9 @@ export default function Index() {
         ]}
         value={mode}
         onChange={setMode}
-        containerStyle={{ marginTop: 20 }}
+        activeColor="#ea580c"
+        inactiveColor="#ea580c"
+        containerStyle={{ marginTop: 20, backgroundColor: "#ffedd5"}}
       />
 
 
