@@ -17,7 +17,7 @@ export default function Index() {
   // For Toggle Groups
   const [status, setStatus] = useState<Status>("all");
   const [layout, setLayout] = useState<Layout>("list");
-  const [layoutIcon, setLayoutIcon] = useState<Layout>("grid");
+  const [layoutIcon, setLayoutIcon] = useState<Layout>("list");
   const [type, setType] = useState<Type>("on")
   const [plan, setPlan] = useState<Plan>("monthly")
   const [alert, setAlert] = useState<Type>("off")
@@ -187,7 +187,8 @@ export default function Index() {
       <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Toggle Groups</Text>
 
       <ToggleGroup
-        variant="outline"
+      width={"90%"}
+        variant="pill"
         items={[
           { label: "All", value: "all" },
           { label: "Active", value: "active" },
@@ -197,6 +198,8 @@ export default function Index() {
         onChange={setStatus}
         activeColor="#2563EB"
         borderColor="#E5E7EB"
+        containerStyle={{borderRadius: 10}}
+        indicatorStyle={{borderRadius: 10}}
       />
 
       <ToggleGroup
@@ -230,12 +233,12 @@ export default function Index() {
       <ToggleGroup
         items={[
           {
-            label: "",
+            label: "List",
             value: "list",
             icon: <Ionicons name="list" size={18} />,
           },
           {
-            label: "",
+            label: "Grid",
             value: "grid",
             icon: <Ionicons name="grid" size={18} />,
           },

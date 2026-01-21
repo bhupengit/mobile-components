@@ -35,6 +35,7 @@ export interface ToggleGroupProps<T extends ToggleValue = string> {
   borderColor?: string;
   backgroundColor?: string;
 
+  indicatorStyle?: ViewStyle;
   containerStyle?: ViewStyle;
   textStyle?: TextStyle;
 }
@@ -52,7 +53,7 @@ export function ToggleGroup<T extends ToggleValue>({
   inactiveColor = "#6B7280",
   borderColor = "#E5E7EB",
   backgroundColor = "#F3F4F6",
-
+  indicatorStyle,
   containerStyle,
   textStyle,
 }: ToggleGroupProps<T>) {
@@ -97,6 +98,7 @@ export function ToggleGroup<T extends ToggleValue>({
               backgroundColor: activeColor,
               transform: [{ translateX }],
             },
+            indicatorStyle
           ]}
         />
       )}
