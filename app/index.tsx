@@ -166,7 +166,7 @@ export default function Index() {
           leftIcon={<Ionicons name="refresh" size={16} color="#374151" />}
         /> */}
 
-      <Text style={{ fontSize: 26, fontWeight: "bold" }}>Button Components</Text>
+      <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Toggle Group</Text>
       <ToggleGroup
         items={[
           { label: "Day", value: "day" },
