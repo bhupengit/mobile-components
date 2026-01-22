@@ -2,6 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 import { Text, View } from "react-native";
 import { ToggleGroup } from "./src/components/toogleGroup";
+import { MorphButton } from "./src/components/morphButton";
 
 type Status = "all" | "active" | "done";
 type Layout = "list" | "grid";
@@ -329,6 +330,8 @@ export default function Index() {
         backgroundColor="#D1D5DB"
         containerStyle={{ marginTop: 20 }}
       />
+
+      <MorphButton />
     </View>
   );
 }
