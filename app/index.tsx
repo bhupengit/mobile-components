@@ -1,7 +1,5 @@
-import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 import { Text, View } from "react-native";
-import { ToggleGroup } from "./src/components/toogleGroup";
 import { MorphButton } from "./src/components/morphButton";
 
 type Status = "all" | "active" | "done";
@@ -185,9 +183,9 @@ export default function Index() {
           leftIcon={<Ionicons name="refresh" size={16} color="#374151" />}
         /> */}
 
-      <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Toggle Groups</Text>
+      {/* <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Toggle Groups</Text> */}
 
-      <ToggleGroup
+      {/* <ToggleGroup
       width={"95%"}
         variant="pill"
         items={[
@@ -329,7 +327,9 @@ export default function Index() {
         activeColor="#22C55E"
         backgroundColor="#D1D5DB"
         containerStyle={{ marginTop: 20 }}
-      />
+      /> */}
+
+      <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Morph Button</Text>
 
       <MorphButton />
     </View>
