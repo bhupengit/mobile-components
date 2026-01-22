@@ -1,17 +1,21 @@
+import { Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
+import { ActivityIndicator, Pressable, Text } from "react-native";
 import Animated, {
-    useSharedValue,
     useAnimatedStyle,
-    withTiming,
-    runOnJS,
-  } from "react-native-reanimated";
-  import { Pressable, Text, ActivityIndicator } from "react-native";
-  import { Ionicons } from "@expo/vector-icons";
-  import { useState } from "react";
+    useSharedValue,
+    withTiming
+} from "react-native-reanimated";
+
+const BUTTON_WIDTH = 260;
+const BUTTON_HEIGHT = 56;
+const RESET_DELAY = 5000; // ms
+
   
   export function MorphButton() {
     const [state, setState] = useState<"idle" | "loading" | "success">("idle");
   
-    const width = useSharedValue(260);
+    const width = useSharedValue(BUTTON_WIDTH);
     const radius = useSharedValue(12);
     const contentOpacity = useSharedValue(1);
   
@@ -24,15 +28,30 @@ import Animated, {
       opacity: contentOpacity.value,
     }));
   
+    const resetToIdle = () => {
+      width.value = withTiming(BUTTON_WIDTH, { duration: 300 });
+      radius.value = withTiming(12, { duration: 300 });
+      contentOpacity.value = withTiming(1, { duration: 200 });
+      setState("idle");
+    };
+  
     const onPress = () => {
+      if (state !== "idle") return;
+  
       setState("loading");
   
       contentOpacity.value = withTiming(0, { duration: 150 });
       width.value = withTiming(56, { duration: 300 });
       radius.value = withTiming(28, { duration: 300 });
   
+      // simulate API call
       setTimeout(() => {
         setState("success");
+  
+        // auto reset after success
+        setTimeout(() => {
+          resetToIdle();
+        }, RESET_DELAY);
       }, 1500);
     };
   
@@ -41,7 +60,7 @@ import Animated, {
         <Animated.View
           style={[
             {
-              height: 56,
+              height: BUTTON_HEIGHT,
               backgroundColor: "#2B6CB0",
               alignItems: "center",
               justifyContent: "center",
