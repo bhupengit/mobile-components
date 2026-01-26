@@ -48,7 +48,7 @@ export default function Dropdown({
   iconColor = "#6B7280",
 
   height = 48,
-  width = "90%",
+  width = "100%",
 
   disabled = false,
   containerStyle,
