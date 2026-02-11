@@ -48,7 +48,7 @@ export default function Dropdown({
   iconColor = "#6B7280",
 
   height = 48,
-  width = "90%",
+  width = "100%",
 
   disabled = false,
   containerStyle,
@@ -83,7 +83,7 @@ export default function Dropdown({
           {selectedItem?.label ?? placeholder}
         </Text>
 
-        <View style={{ marginLeft: 8 }}>
+        <View style={{ marginLeft: 10 }}>
           {icon ?? (
             <Text style={{ color: iconColor, fontSize: 16 }}>⌄</Text>
           )}
