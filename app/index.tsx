@@ -183,7 +183,7 @@ export default function Index() {
           leftIcon={<Ionicons name="refresh" size={16} color="#374151" />}
         /> */}
 
-      <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Toggle Groups</Text>
+      {/* <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Toggle Groups</Text> */}
 
       {/* <ToggleGroup
       width={"95%"}
@@ -336,6 +336,9 @@ export default function Index() {
       <MorphButton />
       </View>
       
+      <View style={{marginTop: 10}}>
+      <MorphButton />
+      </View>
       
     </View>
   );
