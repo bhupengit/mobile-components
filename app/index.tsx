@@ -22,7 +22,6 @@ export default function Index() {
   const [alert, setAlert] = useState<Type>("off")
   const [modeSwitch, setModeSwitch] = useState<Mode>("light")
   const [enabled, setEnabled] = useState<"off" | "on">("off");
-  const [enabled1, setEnabled1] = useState<"off" | "on">("off");
 
   return (
     <View
