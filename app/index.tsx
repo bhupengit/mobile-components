@@ -336,7 +336,7 @@ export default function Index() {
       <MorphButton />
       </View>
       
-      <View style={{marginTop: 10}}>
+      <View style={{marginTop: 12}}>
       <MorphButton />
       </View>
       
