@@ -329,7 +329,7 @@ export default function Index() {
         containerStyle={{ marginTop: 20 }}
       /> */}
 
-      <Text style={{ fontSize: 25, fontWeight: "bold", marginBottom: 40 }}>Animated Button</Text>
+      <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Animated Button</Text>
 
       <MorphButton />
       <View style={{marginTop: 12}}>
