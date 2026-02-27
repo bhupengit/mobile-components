@@ -70,7 +70,7 @@ const RESET_DELAY = 3600; // ms
         >
           {state === "idle" && (
             <Animated.View style={[{ flexDirection: "row", gap: 8 }, contentStyle]}>
-              <Text style={{ color: "#FFF", fontSize: 16, fontWeight: "600" }}>
+              <Text style={{ color: "#FFF", fontSize: 15, fontWeight: "600" }}>
                 Checkout
               </Text>
               <Ionicons name="arrow-forward" size={18} color="#FFF" />
