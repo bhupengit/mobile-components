@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Text, View } from "react-native";
+import PremiumDropdown from "./src/components/dropdown";
 import { MorphButton } from "./src/components/morphButton";
 
 type Status = "all" | "active" | "done";
@@ -337,7 +338,11 @@ export default function Index() {
       </View>
       
       <View style={{marginTop: 10}}>
-      <MorphButton />
+      <PremiumDropdown
+        onSelect={(value) => {
+          console.log("Selected:", value);
+        }}
+      />
       </View>
       
     </View>
