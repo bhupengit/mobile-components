@@ -35,7 +35,6 @@ export default function Index() {
       style={{
         flex: 1,
         justifyContent: "center",
-        alignItems: "center",
         backgroundColor: "#fff"
       }}
     >
@@ -336,7 +335,7 @@ export default function Index() {
         containerStyle={{ marginTop: 20 }}
       /> */}
 
-      <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Premium Dropdown</Text>
+      {/* <Text style={{ fontSize: 26, fontWeight: "bold", marginBottom: 40 }}>Premium Dropdown</Text> */}
 
       {/* <MorphButton />
       <View style={{marginTop: 10}}>
