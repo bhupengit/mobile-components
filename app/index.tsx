@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
-import { Text, View } from "react-native";
-import PremiumDropdown from "./src/components/dropdown";
 import BottomSheet from "@gorhom/bottom-sheet";
+import { useRef, useState } from "react";
+import { Button, Text, View } from "react-native";
+import PremiumBottomSheet from "./src/components/bottomsheet";
 
 type Status = "all" | "active" | "done";
 type Layout = "list" | "grid";
@@ -343,7 +343,7 @@ export default function Index() {
       <MorphButton />
       </View> */}
 
-      <View style={{ marginTop: 10 }}>
+      {/* <View style={{ marginTop: 10 }}>
         <PremiumDropdown
           onSelect={(value) => {
             console.log("Selected:", value);
@@ -360,17 +360,17 @@ export default function Index() {
           ]}
           defaultValue="Option 1"
         />
-      </View>
-      <View style={{ marginTop: 10 }}>
-        <MorphButton title="Open Premium Sheet" onPress={openSheet} />
+      </View> */}
+      <View style={{ flex: 1, justifyContent: "center", padding: 20 }}>
+        <Button title="Open Premium Sheet" onPress={openSheet} />
 
-        <SuperPremiumBottomSheet ref={sheetRef} title="Trending Options">
+        <PremiumBottomSheet ref={sheetRef} title="Trending Options">
           <Text>🔥 Trending</Text>
           <Text>⭐ Featured</Text>
           <Text>🚀 Latest</Text>
           <Text>📈 Popular</Text>
           <Text>💡 Recommended</Text>
-        </SuperPremiumBottomSheet>
+        </PremiumBottomSheet>
       </View>
     </View>
   );

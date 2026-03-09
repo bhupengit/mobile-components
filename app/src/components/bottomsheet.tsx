@@ -1,10 +1,10 @@
-import React, { forwardRef, useMemo } from "react";
-import { View, Text, StyleSheet } from "react-native";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetScrollView,
 } from "@gorhom/bottom-sheet";
 import { BlurView } from "expo-blur";
+import React, { forwardRef, useMemo } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 interface Props {
   title?: string;
@@ -34,6 +34,7 @@ const PremiumBottomSheet = forwardRef<BottomSheet, Props>(
         enablePanDownToClose
         handleIndicatorStyle={styles.indicator}
         backgroundStyle={styles.background}
+        style={{ width: "100%" }} 
       >
         <BlurView intensity={40} tint="light" style={styles.blurContainer}>
           {/* Sticky Header */}
@@ -58,7 +59,15 @@ export default PremiumBottomSheet;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: "transparent",
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
+    backgroundColor: "#fff",
+  },
+
+  indicator: {
+    backgroundColor: "#d1d5db",
+    width: 45,
+    height: 5,
   },
 
   blurContainer: {
@@ -66,11 +75,6 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     overflow: "hidden",
-  },
-
-  indicator: {
-    backgroundColor: "#d1d5db",
-    width: 40,
   },
 
   header: {
