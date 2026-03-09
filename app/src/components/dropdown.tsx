@@ -120,7 +120,7 @@ export default PremiumDropdown;
 
 const styles = StyleSheet.create({
   container: {
-    width: 160,
+    width: 260,
     zIndex: 100,
   },
 
