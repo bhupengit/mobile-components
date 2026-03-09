@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Text, View } from "react-native";
 import PremiumDropdown from "./src/components/dropdown";
+import BottomSheet from "@gorhom/bottom-sheet";
 
 type Status = "all" | "active" | "done";
 type Layout = "list" | "grid";
@@ -22,6 +23,12 @@ export default function Index() {
   const [alert, setAlert] = useState<Type>("off")
   const [modeSwitch, setModeSwitch] = useState<Mode>("light")
   const [enabled, setEnabled] = useState<"off" | "on">("off");
+
+  const sheetRef = useRef<BottomSheet>(null);
+
+  const openSheet = () => {
+    sheetRef.current?.expand();
+  };
 
   return (
     <View
@@ -335,26 +342,36 @@ export default function Index() {
       <View style={{marginTop: 10}}>
       <MorphButton />
       </View> */}
-      
-      <View style={{marginTop: 10}}>
-      <PremiumDropdown
-        onSelect={(value) => {
-          console.log("Selected:", value);
-        }}
-        options={[
-          { label: "Option 1", icon: "⭐" },
-          { label: "Option 2", icon: "🔥" },
-          { label: "Option 3", icon: "🚀" },
-          { label: "Option 4", icon: "💡" },
-          { label: "Option 5", icon: "🎯" },
-          { label: "Option 6", icon: "📈" },
-          { label: "Option 7", icon: "⚡" },
-          { label: "Option 8", icon: "🏆" },
-        ]}
-        defaultValue = "Option 1"
-      />
+
+      <View style={{ marginTop: 10 }}>
+        <PremiumDropdown
+          onSelect={(value) => {
+            console.log("Selected:", value);
+          }}
+          options={[
+            { label: "Option 1", icon: "⭐" },
+            { label: "Option 2", icon: "🔥" },
+            { label: "Option 3", icon: "🚀" },
+            { label: "Option 4", icon: "💡" },
+            { label: "Option 5", icon: "🎯" },
+            { label: "Option 6", icon: "📈" },
+            { label: "Option 7", icon: "⚡" },
+            { label: "Option 8", icon: "🏆" },
+          ]}
+          defaultValue="Option 1"
+        />
       </View>
-      
+      <View style={{ marginTop: 10 }}>
+        <MorphButton title="Open Premium Sheet" onPress={openSheet} />
+
+        <SuperPremiumBottomSheet ref={sheetRef} title="Trending Options">
+          <Text>🔥 Trending</Text>
+          <Text>⭐ Featured</Text>
+          <Text>🚀 Latest</Text>
+          <Text>📈 Popular</Text>
+          <Text>💡 Recommended</Text>
+        </SuperPremiumBottomSheet>
+      </View>
     </View>
   );
 }
