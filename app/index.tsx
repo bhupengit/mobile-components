@@ -341,6 +341,17 @@ export default function Index() {
         onSelect={(value) => {
           console.log("Selected:", value);
         }}
+        options={[
+          { label: "Option 1", icon: "⭐" },
+          { label: "Option 2", icon: "🔥" },
+          { label: "Option 3", icon: "🚀" },
+          { label: "Option 4", icon: "💡" },
+          { label: "Option 5", icon: "🎯" },
+          { label: "Option 6", icon: "📈" },
+          { label: "Option 7", icon: "⚡" },
+          { label: "Option 8", icon: "🏆" },
+        ]}
+        defaultValue = "Option 1"
       />
       </View>
       
