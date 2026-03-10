@@ -2,6 +2,7 @@ import BottomSheet from "@gorhom/bottom-sheet";
 import { useRef, useState } from "react";
 import { Button, Text, View } from "react-native";
 import PremiumBottomSheet from "./src/components/bottomsheet";
+import PremiumDropdown from "./src/components/dropdown";
 
 type Status = "all" | "active" | "done";
 type Layout = "list" | "grid";
