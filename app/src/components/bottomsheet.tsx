@@ -59,8 +59,8 @@ export default PremiumBottomSheet;
 
 const styles = StyleSheet.create({
   background: {
-    borderTopLeftRadius: 28,
-    borderTopRightRadius: 28,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
     backgroundColor: "#fff",
   },
 
