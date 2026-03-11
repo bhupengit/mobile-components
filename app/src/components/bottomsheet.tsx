@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
 
   blurContainer: {
     flex: 1,
-    borderTopLeftRadius: 26,
-    borderTopRightRadius: 26,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
     overflow: "hidden",
   },
 
