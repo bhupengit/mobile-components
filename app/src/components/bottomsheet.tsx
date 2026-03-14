@@ -34,7 +34,7 @@ const PremiumBottomSheet = forwardRef<BottomSheet, Props>(
         enablePanDownToClose
         handleIndicatorStyle={styles.indicator}
         backgroundStyle={styles.background}
-        style={{ width: "90%" }} 
+        style={{ width: "100%" }} 
       >
         <BlurView intensity={50} tint="light" style={styles.blurContainer}>
           {/* Sticky Header */}
