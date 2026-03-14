@@ -13,7 +13,7 @@ interface Props {
 
 const PremiumBottomSheet = forwardRef<BottomSheet, Props>(
   ({ title = "Options", children }, ref) => {
-    const snapPoints = useMemo(() => ["20%", "50%", "80%"], []);
+    const snapPoints = useMemo(() => ["24%", "50%", "80%"], []);
 
     const renderBackdrop = (props: any) => (
       <BottomSheetBackdrop
