@@ -36,7 +36,7 @@ const PremiumBottomSheet = forwardRef<BottomSheet, Props>(
         backgroundStyle={styles.background}
         style={{ width: "100%" }} 
       >
-        <BlurView intensity={50} tint="light" style={styles.blurContainer}>
+        <BlurView intensity={40} tint="light" style={styles.blurContainer}>
           {/* Sticky Header */}
           <View style={styles.header}>
             <Text style={styles.title}>{title}</Text>
