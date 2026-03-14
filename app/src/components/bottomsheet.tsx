@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   indicator: {
     backgroundColor: "#d1d5db",
     width: 45,
-    height: 5,
+    height: 4,
   },
 
   blurContainer: {
