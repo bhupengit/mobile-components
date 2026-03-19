@@ -369,7 +369,7 @@ export default function Index() {
           <Text>⭐ Featured</Text>
           <Text>🚀 Latest</Text>
           <Text>📈 Popular</Text>
-          <Text>💡 Recommended</Text>
+          <Text>💡 Suggested</Text>
         </PremiumBottomSheet>
       </View>
     </View>
