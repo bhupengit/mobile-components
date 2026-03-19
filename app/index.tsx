@@ -349,14 +349,14 @@ export default function Index() {
             console.log("Selected:", value);
           }}
           options={[
-            { label: "Option 1", icon: "⭐" },
-            { label: "Option 2", icon: "🔥" },
-            { label: "Option 3", icon: "🚀" },
-            { label: "Option 4", icon: "💡" },
-            { label: "Option 5", icon: "🎯" },
-            { label: "Option 6", icon: "📈" },
-            { label: "Option 7", icon: "⚡" },
-            { label: "Option 8", icon: "🏆" },
+            { label: "Option 11", icon: "⭐" },
+            { label: "Option 12", icon: "🔥" },
+            { label: "Option 13", icon: "🚀" },
+            { label: "Option 14", icon: "💡" },
+            { label: "Option 15", icon: "🎯" },
+            { label: "Option 16", icon: "📈" },
+            { label: "Option 17", icon: "⚡" },
+            { label: "Option 18", icon: "🏆" },
           ]}
           defaultValue="Option 1"
         />
