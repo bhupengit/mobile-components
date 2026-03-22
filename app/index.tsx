@@ -343,7 +343,7 @@ export default function Index() {
       <MorphButton />
       </View> */}
 
-      <View style={{ marginTop: 10 }}>
+      <View style={{ marginTop: 20 }}>
         <PremiumDropdown
           onSelect={(value) => {
             console.log("You chose:", value);
