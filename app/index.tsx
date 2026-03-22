@@ -346,7 +346,7 @@ export default function Index() {
       <View style={{ marginTop: 10 }}>
         <PremiumDropdown
           onSelect={(value) => {
-            console.log("Selected:", value);
+            console.log("You chose:", value);
           }}
           options={[
             { label: "Option 1", icon: "⭐" },
