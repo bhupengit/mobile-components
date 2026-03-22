@@ -361,7 +361,7 @@ export default function Index() {
           defaultValue="Option 1"
         />
       </View>
-      <View style={{ flex: 1, justifyContent: "center", padding: 18 }}>
+      <View style={{ flex: 1, justifyContent: "center", padding: 16 }}>
         <Button title="Open Premium Sheet" onPress={openSheet} />
 
         <PremiumBottomSheet ref={sheetRef} title="Trending Options">
