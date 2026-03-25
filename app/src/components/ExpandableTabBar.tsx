@@ -26,7 +26,7 @@ const TABS = [
   { icon: Home, label: "Home" },
   { icon: Search, label: "Search" },
   { icon: Heart, label: "Likes" },
-  { icon: User, label: "Account" },
+  { icon: User, label: "Profile" },
 ];
 
 export default function ExpandableTabBar() {
