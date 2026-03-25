@@ -25,7 +25,7 @@ const { width } = Dimensions.get("window");
 const TABS = [
   { icon: Home, label: "Home" },
   { icon: Search, label: "Search" },
-  { icon: Heart, label: "Like" },
+  { icon: Heart, label: "Likes" },
   { icon: User, label: "Profile" },
 ];
 
