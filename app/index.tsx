@@ -344,7 +344,7 @@ export default function Index() {
       <MorphButton />
       </View> */}
 
-      <View style={{ marginTop: 20 }}>
+      {/* <View style={{ marginTop: 20 }}>
         <PremiumDropdown
           onSelect={(value) => {
             console.log("You chose:", value);
@@ -361,7 +361,7 @@ export default function Index() {
           ]}
           defaultValue="Option 1"
         />
-      </View>
+      </View> */}
       <View style={{ flex: 1, justifyContent: "center", padding: 16 }}>
         <Button title="Open Premium Sheet" onPress={openSheet} />
 
