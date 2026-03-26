@@ -373,7 +373,7 @@ export default function Index() {
 
         </View> */}
         <View style={{ flex: 1 }}>
-      <Text style={{ marginTop: 100, textAlign: "center", fontSize: 20, fontWeight: "bold" }}>
+      <Text style={{ marginTop: 100, textAlign: "center", fontSize: 20, fontWeight: "bold", color: "green" }}>
         Expandable Tab Bar
       </Text>
 
