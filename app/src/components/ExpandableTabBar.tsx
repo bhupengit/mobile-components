@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { View, Pressable, StyleSheet } from "react-native";
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withSpring,
-  interpolate,
-} from "react-native-reanimated";
 import {
-  Home,
-  User,
-  Plus,
-  X,
-  Search,
   Heart,
+  Home,
+  Plus,
+  Search,
+  User,
+  X,
 } from "lucide-react-native";
+import React, { useState } from "react";
+import { Pressable, StyleSheet, View } from "react-native";
+import Animated, {
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+} from "react-native-reanimated";
 
 type Tab = "home" | "profile";
 
@@ -100,12 +100,13 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     width: "100%",
-    height: 70,
+    height: 100,
     backgroundColor: "#fff",
     justifyContent: "space-around",
     alignItems: "center",
     borderTopWidth: 0.5,
     borderColor: "#ddd",
+    paddingBottom: 10, 
   },
 
   centerButton: {
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#4f46e5",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: -30,
+    marginTop: -60,
   },
 
   menu: {
