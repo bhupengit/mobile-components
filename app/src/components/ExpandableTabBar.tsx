@@ -1,136 +1,136 @@
-import {
-  Heart,
-  Home,
-  Plus,
-  Search,
-  User,
-} from "lucide-react-native";
-import React from "react";
-import {
-  Dimensions,
-  Pressable,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import React, { useState } from "react";
+import { View, Pressable, StyleSheet } from "react-native";
 import Animated, {
-  interpolate,
-  useAnimatedStyle,
   useSharedValue,
+  useAnimatedStyle,
   withSpring,
-  withTiming,
+  interpolate,
 } from "react-native-reanimated";
+import {
+  Home,
+  User,
+  Plus,
+  X,
+  Search,
+  Heart,
+} from "lucide-react-native";
 
-const { width } = Dimensions.get("window");
-
-const TABS = [
-  { icon: Home, label: "Home" },
-  { icon: Search, label: "Search" },
-  { icon: Heart, label: "Likes" },
-  { icon: User, label: "Profile" },
-];
+type Tab = "home" | "profile";
 
 export default function ExpandableTabBar() {
+  const [activeTab, setActiveTab] = useState<Tab>("home");
+
   const open = useSharedValue(0);
 
   const toggle = () => {
-    open.value = open.value === 0 ? withSpring(1) : withTiming(0);
+    open.value = open.value === 0 ? withSpring(1) : withSpring(0);
   };
 
-  const backdropStyle = useAnimatedStyle(() => ({
+  const menuStyle = useAnimatedStyle(() => ({
     opacity: open.value,
-    pointerEvents: open.value === 0 ? "none" : "auto",
+    transform: [
+      {
+        translateY: interpolate(open.value, [0, 1], [20, -60]),
+      },
+    ],
+  }));
+
+  const rotateStyle = useAnimatedStyle(() => ({
+    transform: [
+      {
+        rotate: `${interpolate(open.value, [0, 1], [0, 45])}deg`,
+      },
+    ],
   }));
 
   return (
-    <>
-      {/* Backdrop */}
-      <Animated.View style={[styles.backdrop, backdropStyle]} />
+    <View style={styles.wrapper}>
+      {/* Expandable Menu */}
+      <Animated.View style={[styles.menu, menuStyle]}>
+        <Pressable style={styles.menuItem}>
+          <Search color="#fff" size={20} />
+        </Pressable>
 
-      {/* Floating Tab Bar */}
+        <Pressable style={styles.menuItem}>
+          <Heart color="#fff" size={20} />
+        </Pressable>
+      </Animated.View>
+
+      {/* Tab Bar */}
       <View style={styles.container}>
-        {/* Expandable Icons */}
-        {TABS.map((tab, index) => {
-          const animatedStyle = useAnimatedStyle(() => {
-            const translateY = interpolate(
-              open.value,
-              [0, 1],
-              [0, -(index + 1) * 60]
-            );
+        {/* Home */}
+        <Pressable onPress={() => setActiveTab("home")}>
+          <Home
+            size={24}
+            color={activeTab === "home" ? "#4f46e5" : "#999"}
+          />
+        </Pressable>
 
-            const scale = interpolate(open.value, [0, 1], [0, 1]);
-
-            return {
-              transform: [{ translateY }, { scale }],
-              opacity: open.value,
-            };
-          });
-
-          const Icon = tab.icon;
-
-          return (
-            <Animated.View key={index} style={[styles.floatingItem, animatedStyle]}>
-              <Pressable style={styles.item}>
-                <Icon size={22} color="#fff" />
-              </Pressable>
-            </Animated.View>
-          );
-        })}
-
-        {/* Main Button */}
-        <TouchableOpacity style={styles.mainButton} onPress={toggle}>
-          <Animated.View
-            style={useAnimatedStyle(() => ({
-              transform: [
-                {
-                  rotate: `${interpolate(open.value, [0, 1], [0, 45])}deg`,
-                },
-              ],
-            }))}
-          >
-            <Plus size={26} color="#fff" />
+        {/* Center Expand Button */}
+        <Pressable style={styles.centerButton} onPress={toggle}>
+          <Animated.View style={rotateStyle}>
+            {open.value ? (
+              <X size={26} color="#fff" />
+            ) : (
+              <Plus size={26} color="#fff" />
+            )}
           </Animated.View>
-        </TouchableOpacity>
+        </Pressable>
+
+        {/* Profile */}
+        <Pressable onPress={() => setActiveTab("profile")}>
+          <User
+            size={24}
+            color={activeTab === "profile" ? "#4f46e5" : "#999"}
+          />
+        </Pressable>
       </View>
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  backdrop: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: "transparent",
-  },
-
-  container: {
+  wrapper: {
     position: "absolute",
-    bottom: 30,
-    alignSelf: "center",
+    bottom: 0,
+    width: "100%",
     alignItems: "center",
   },
 
-  mainButton: {
+  container: {
+    flexDirection: "row",
+    width: "100%",
+    height: 70,
+    backgroundColor: "#fff",
+    justifyContent: "space-around",
+    alignItems: "center",
+    borderTopWidth: 0.5,
+    borderColor: "#ddd",
+  },
+
+  centerButton: {
     width: 64,
     height: 64,
     borderRadius: 32,
     backgroundColor: "#4f46e5",
     justifyContent: "center",
     alignItems: "center",
-    elevation: 6,
+    marginTop: -30,
   },
 
-  floatingItem: {
+  menu: {
     position: "absolute",
-    bottom: 0,
+    bottom: 70,
+    flexDirection: "row",
+    gap: 12,
   },
 
-  item: {
-    width: 52,
-    height: 52,
-    borderRadius: 26,
+  menuItem: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
     backgroundColor: "#111",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 10,
   },
 });
