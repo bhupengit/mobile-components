@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Button, Text, View } from "react-native";
 import PremiumBottomSheet from "./src/components/bottomsheet";
 import PremiumDropdown from "./src/components/dropdown";
+import ExpandableTabBar from "./src/components/ExpandableTabBar";
 
 type Status = "all" | "active" | "done";
 type Layout = "list" | "grid";
@@ -371,6 +372,14 @@ export default function Index() {
           <Text>📈 Popular</Text>
           <Text>💡 Recommended</Text>
         </PremiumBottomSheet>
+
+        <View style={{ flex: 1 }}>
+      <Text style={{ marginTop: 100, textAlign: "center" }}>
+        Expandable Tab Bar
+      </Text>
+
+      <ExpandableTabBar />
+    </View>
       </View>
     </View>
   );
