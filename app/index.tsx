@@ -1,7 +1,6 @@
 import BottomSheet from "@gorhom/bottom-sheet";
 import { useRef, useState } from "react";
-import { Button, Text, View } from "react-native";
-import PremiumBottomSheet from "./src/components/bottomsheet";
+import { Text, View } from "react-native";
 import ExpandableTabBar from "./src/components/ExpandableTabBar";
 
 type Status = "all" | "active" | "done";
@@ -361,7 +360,7 @@ export default function Index() {
           defaultValue="Option 1"
         />
       </View> */}
-      <View style={{ flex: 1, justifyContent: "center", padding: 16, marginTop:100 }}>
+      {/* <View style={{ flex: 1, justifyContent: "center", padding: 16, marginTop:100 }}>
         <Button title="Open Premium Sheet" onPress={openSheet} />
 
         <PremiumBottomSheet ref={sheetRef} title="Trending Options">
@@ -372,14 +371,14 @@ export default function Index() {
           <Text>💡 Recommended</Text>
         </PremiumBottomSheet>
 
+        </View> */}
         <View style={{ flex: 1 }}>
-      <Text style={{ marginTop: 100, textAlign: "center" }}>
+      <Text style={{ marginTop: 100, textAlign: "center", fontSize: 20, fontWeight: "bold" }}>
         Expandable Tab Bar
       </Text>
 
       <ExpandableTabBar />
     </View>
-      </View>
     </View>
   );
 }

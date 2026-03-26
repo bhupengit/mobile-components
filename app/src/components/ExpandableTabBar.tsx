@@ -1,24 +1,25 @@
-import React from "react";
 import {
-  View,
-  Pressable,
-  StyleSheet,
-  Dimensions,
-} from "react-native";
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withSpring,
-  withTiming,
-  interpolate,
-} from "react-native-reanimated";
-import {
-  Plus,
-  Home,
-  Search,
   Heart,
+  Home,
+  Plus,
+  Search,
   User,
 } from "lucide-react-native";
+import React from "react";
+import {
+  Dimensions,
+  Pressable,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import Animated, {
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+  withTiming,
+} from "react-native-reanimated";
 
 const { width } = Dimensions.get("window");
 
@@ -77,7 +78,7 @@ export default function ExpandableTabBar() {
         })}
 
         {/* Main Button */}
-        <Pressable style={styles.mainButton} onPress={toggle}>
+        <TouchableOpacity style={styles.mainButton} onPress={toggle}>
           <Animated.View
             style={useAnimatedStyle(() => ({
               transform: [
@@ -89,7 +90,7 @@ export default function ExpandableTabBar() {
           >
             <Plus size={26} color="#fff" />
           </Animated.View>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </>
   );
@@ -98,7 +99,7 @@ export default function ExpandableTabBar() {
 const styles = StyleSheet.create({
   backdrop: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(0,0,0,0.2)",
+    backgroundColor: "transparent",
   },
 
   container: {
