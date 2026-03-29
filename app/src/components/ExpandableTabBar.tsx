@@ -15,7 +15,7 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 
-type Tab = "home" | "profile";
+type Tab = "home" | "account";
 
 export default function ExpandableTabBar() {
   const [activeTab, setActiveTab] = useState<Tab>("home");
