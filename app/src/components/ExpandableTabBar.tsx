@@ -52,7 +52,7 @@ export default function ExpandableTabBar() {
         </Pressable>
 
         <Pressable style={styles.menuItem}>
-          <Heart color="#fff" size={20} />
+          <Heart color="#fff" size={24} />
         </Pressable>
       </Animated.View>
 
