@@ -61,7 +61,7 @@ export default function ExpandableTabBar() {
         {/* Home */}
         <Pressable onPress={() => setActiveTab("home")}>
           <Home
-            size={24}
+            size={20}
             color={activeTab === "home" ? "#4f46e5" : "#999"}
           />
         </Pressable>
