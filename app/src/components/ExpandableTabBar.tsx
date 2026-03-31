@@ -48,7 +48,7 @@ export default function ExpandableTabBar() {
       {/* Expandable Menu */}
       <Animated.View style={[styles.menu, menuStyle]}>
         <Pressable style={styles.menuItem}>
-          <Search color="#fff" size={20} />
+          <Search color="#fff" size={24} />
         </Pressable>
 
         <Pressable style={styles.menuItem}>
