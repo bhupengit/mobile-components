@@ -140,7 +140,7 @@ export function ToggleGroup<T extends ToggleValue>({
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    borderRadius: 99,
+    borderRadius: 999,
     overflow: "hidden",
   },
   indicator: {
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     top: 2,
     bottom: 2,
     left: 2,
-    borderRadius: 99,
+    borderRadius: 999,
   },
   item: {
     flex: 1,
