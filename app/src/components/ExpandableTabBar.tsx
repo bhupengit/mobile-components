@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     width: "100%",
-    height: 80,
+    height: 100,
     backgroundColor: "#fff",
     justifyContent: "space-around",
     alignItems: "center",
