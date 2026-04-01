@@ -81,7 +81,7 @@ export default function ExpandableTabBar() {
         <Pressable onPress={() => setActiveTab("profile")}>
           <User
             size={24}
-            color={activeTab === "dashboard" ? "#4f46e5" : "#999"}
+            color={activeTab === "profile" ? "#4f46e5" : "#999"}
           />
         </Pressable>
       </View>
