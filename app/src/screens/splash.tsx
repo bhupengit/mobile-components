@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import Animated, {
-    useSharedValue,
-    useAnimatedStyle,
-    withTiming,
-    withSpring,
-    withSequence,
     interpolate,
     runOnJS,
+    useAnimatedStyle,
+    useSharedValue,
+    withTiming
 } from "react-native-reanimated";
 
 interface Props {
@@ -70,10 +68,14 @@ export default function AnimatedSplash({ onFinish }: Props) {
     }, []);
 
     const logoStyle = useAnimatedStyle(() => ({
-        transform: [{ scale: scale.value }],
+        transform: [
+            {
+                rotate: `${rotation.value}deg`,
+            },
+            { scale: 1.1 },
+        ],
         opacity: opacity.value,
     }));
-
     const textStyle = useAnimatedStyle(() => ({
         opacity: textOpacity.value,
         transform: [
