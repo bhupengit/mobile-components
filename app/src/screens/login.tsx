@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 export default function login() {
   return (
     <View>
-      <Text>Login Screen</Text>
+      <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Login Screen</Text>
     </View>
   )
 }
