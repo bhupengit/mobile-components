@@ -2,6 +2,7 @@ import BottomSheet from "@gorhom/bottom-sheet";
 import { useRef, useState } from "react";
 import { Text, View } from "react-native";
 import ExpandableTabBar from "./src/components/ExpandableTabBar";
+import AnimatedSplash from "./src/screens/splash";
 
 type Status = "all" | "active" | "done";
 type Layout = "list" | "grid";
@@ -13,6 +14,7 @@ type Mode = "light" | "dark"
 export default function Index() {
 
   const [mode, setMode] = useState<"day" | "week" | "month">("day");
+  const [showSplash, setShowSplash] = useState(true);
 
   // For Toggle Groups
   const [status, setStatus] = useState<Status>("all");
@@ -29,6 +31,11 @@ export default function Index() {
   const openSheet = () => {
     sheetRef.current?.expand();
   };
+
+  if (showSplash) {
+    return <AnimatedSplash onFinish={() => setShowSplash(false)} />;
+  }
+
 
   return (
     <View
