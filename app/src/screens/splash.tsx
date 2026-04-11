@@ -50,7 +50,7 @@ export default function AnimatedSplash({ onFinish }: Props) {
             screenOpacity.value = withTiming(0, { duration: 600 }, () => {
                 runOnJS(onFinish)();
             });
-        }, 2800);
+        }, 3000);
     }, []);
 
     const logoStyle = useAnimatedStyle(() => ({
