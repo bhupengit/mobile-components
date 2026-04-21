@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     logo: {
         width: 100,
         height: 100,
-        borderRadius: 30,
+        borderRadius: 25,
         backgroundColor: "#4f46e5",
         justifyContent: "center",
         alignItems: "center",
