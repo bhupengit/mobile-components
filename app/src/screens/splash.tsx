@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
         shadowColor: "#6366f1",
         shadowOpacity: 0.8,
         shadowRadius: 25,
-        elevation: 20,
+        elevation: 25,
     },
 
     logoText: {
