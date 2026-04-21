@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     },
 
     subtitle: {
-        fontSize: 14,
+        fontSize: 16,
         color: "#c7d2fe",
         marginTop: 6,
     },
