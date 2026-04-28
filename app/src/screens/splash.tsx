@@ -42,7 +42,7 @@ export default function AnimatedSplash({ onFinish }: Props) {
 
         // Text appear
         setTimeout(() => {
-            textOpacity.value = withTiming(1, { duration: 1600 });
+            textOpacity.value = withTiming(1, { duration: 600 });
         }, 600);
 
         // Exit animation
