@@ -8,7 +8,7 @@ import Animated, {
 } from "react-native-reanimated";
 
 const BUTTON_WIDTH = 2600;
-const BUTTON_HEIGHT = 56;
+const BUTTON_HEIGHT = 560;
 const RESET_DELAY = 3000; // ms
 
   
