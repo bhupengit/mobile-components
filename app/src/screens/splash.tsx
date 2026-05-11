@@ -26,7 +26,7 @@ export default function AnimatedSplash({ onFinish }: Props) {
     useEffect(() => {
         // Spin infinite
         rotation.value = withRepeat(
-            withTiming(360, { duration: 2000 }),
+            withTiming(360, { duration: 12000 }),
             -1,
             false
         );
