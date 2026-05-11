@@ -47,7 +47,7 @@ export default function AnimatedSplash({ onFinish }: Props) {
 
         // Exit animation
         setTimeout(() => {
-            screenOpacity.value = withTiming(0, { duration: 600 }, () => {
+            screenOpacity.value = withTiming(0, { duration: 1600 }, () => {
                 runOnJS(onFinish)();
             });
         }, 3000);
