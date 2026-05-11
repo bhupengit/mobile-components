@@ -9,7 +9,7 @@ import Animated, {
 
 const BUTTON_WIDTH = 2600;
 const BUTTON_HEIGHT = 560;
-const RESET_DELAY = 3000; // ms
+const RESET_DELAY = 30000; // ms
 
   
   export function MorphButton() {
