@@ -29,7 +29,7 @@ const RESET_DELAY = 3000; // ms
     }));
   
     const resetToIdle = () => {
-      width.value = withTiming(BUTTON_WIDTH, { duration: 1300 });
+      width.value = withTiming(BUTTON_WIDTH, { duration: 300 });
       radius.value = withTiming(12, { duration: 1300 });
       contentOpacity.value = withTiming(1, { duration: 1200 });
       setState("idle");
