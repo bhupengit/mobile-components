@@ -13,7 +13,7 @@ const RESET_DELAY = 3000; // ms
 
   
   export function MorphButton() {
-    const [state, setState] = useState<"waiting" | "loading" | "success">("waiting");
+    const [state, setState] = useState<"idle" | "loading" | "success">("idle");
   
     const width = useSharedValue(BUTTON_WIDTH);
     const radius = useSharedValue(12);
