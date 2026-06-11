@@ -42,8 +42,8 @@ const RESET_DELAY = 3000; // ms
   
       contentOpacity.value = withTiming(0, { duration: 150 });
       width.value = withTiming(56, { duration: 250 });
-      radius.value = withTiming(28, { duration: 250 });
-  
+      radius.value = withTiming(28, { duration: 1250 });
+  1
       // simulate API call
       setTimeout(() => {
         setState("success");
