@@ -7,9 +7,9 @@ import Animated, {
     withTiming
 } from "react-native-reanimated";
 
-const BUTTON_WIDTH = 290;
-const BUTTON_HEIGHT = 59;
-const RESET_DELAY = 2501; // ms
+const BUTTON_WIDTH = 260;
+const BUTTON_HEIGHT = 56;
+const RESET_DELAY = 2500; // ms
 
   
   export function MorphButton() {
